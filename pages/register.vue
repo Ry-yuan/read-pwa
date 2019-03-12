@@ -25,7 +25,7 @@
         </mu-row>
         <mu-row gutter>
           <mu-col span="10" offset="1">
-            <mu-form-item label="密码" help-text="请输入2-8位字符" prop="password" :rules="passwordRules">
+            <mu-form-item label="密码" help-text="请输入2-12位字符" prop="password" :rules="passwordRules">
               <mu-text-field type="password" v-model="validateForm.password" prop="password"></mu-text-field>
             </mu-form-item>
           </mu-col>
@@ -34,7 +34,7 @@
           <mu-col span="10" offset="1">
             <mu-form-item
               label="确认密码"
-              help-text="请输入2-8位字符"
+              help-text="请输入2-12位字符"
               prop="ensurePassword"
               :rules="passwordRules"
             >
@@ -92,8 +92,8 @@ export default {
       passwordRules: [
         { validate: val => !!val, message: "必须填写密码" },
         {
-          validate: val => val.length >= 2 && val.length <= 8,
-          message: "密码长度大于2小于8"
+          validate: val => val.length >= 2 && val.length <= 12,
+          message: "密码长度大于2小于12"
         }
       ],
       validateForm: {
@@ -118,20 +118,17 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.login-title {
+.login-title
   font-size: 20px;
   font-weight: bold;
   margin-top: 80px;
   margin-bottom: 80px;
   text-align: center;
-}
 
-.login-container {
+.login-container
   background: url('../static/img/bg.jpg');
   background-repeat: no-repeat;
-}
 
-.login-span {
+.login-span
   color: #2196f3;
-}
 </style>

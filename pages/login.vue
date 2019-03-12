@@ -19,7 +19,7 @@
         </mu-row>
         <mu-row gutter>
           <mu-col span="10" offset="1">
-            <mu-form-item label="密 码" help-text="请输入2-8位字符" prop="password" :rules="passwordRules">
+            <mu-form-item label="密 码" help-text="请输入2-12位字符" prop="password" :rules="passwordRules">
               <mu-text-field type="password" v-model="validateForm.password" prop="password"></mu-text-field>
             </mu-form-item>
           </mu-col>
@@ -61,13 +61,13 @@ export default {
     return {
       usernameRules: [
         { validate: val => !!val, message: "必须填写用户名" },
-        { validate: val => val.length >= 3, message: "用户名长度大于2" }
+        { validate: val => val.length >= 2, message: "用户名长度大于2" }
       ],
       passwordRules: [
         { validate: val => !!val, message: "必须填写密码" },
         {
-          validate: val => val.length >= 3 && val.length <= 10,
-          message: "密码长度大于2小于8"
+          validate: val => val.length >= 2 && val.length <= 12,
+          message: "密码长度大于2小于12"
         }
       ],
       validateForm: {

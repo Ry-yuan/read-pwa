@@ -1,5 +1,5 @@
 {
-    "buildVersion": 1552225390918,
+    "buildVersion": 1552381253448,
     "build": {
         "ssr": false,
         "publicPath": "/",
@@ -26,7 +26,7 @@
     },
     "serviceWorker": {
         "enable": true,
-        "swDest": "F:\\read-pwa\\frontend\\dist\\service-worker.js"
+        "swDest": "/Users/liangruiyuan/demoSpace/read-pwa-front/dist/service-worker.js"
     },
     "skeleton": {
         "enable": true,
