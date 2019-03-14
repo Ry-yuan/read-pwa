@@ -13,33 +13,35 @@
       </mu-appbar>
     </section>
 
-    <!-- <section>
-      <mu-carousel class="index-carousel-box">
-        <mu-carousel-item>
-          <img :src="carouselImg1">
-        </mu-carousel-item>
-        <mu-carousel-item>
-          <img :src="carouselImg2">
-        </mu-carousel-item>
-        <mu-carousel-item>
-          <img :src="carouselImg1">
-        </mu-carousel-item>
-        <mu-carousel-item>
-          <img :src="carouselImg2">
-        </mu-carousel-item>
-      </mu-carousel>
-    </section> -->
+    <section class="index-options-box">
+        <div class="option-item">诗词</div>
+        <div class="option-item">经典</div>
+        <div class="option-item">作者</div>
+        <div class="option-item">遇见</div>
+    </section>
 
     <!-- list -->
-    <section>
+    <section class="index-list-box">
       <mu-container ref="container" class="demo-loadmore-content">
         <mu-load-more @refresh="refresh" :refreshing="refreshing" :loading="loading" @load="load">
-          <mu-list>
+          <mu-list textline="two-line">
             <template v-for="i in num">
-              <mu-list-item :key=i>
-                <mu-list-item-title>{{text}} Item {{i}}</mu-list-item-title>
+              <mu-list-item avatar :ripple="false" button :key="i">
+                <mu-list-item-content>
+                  <mu-list-item-sub-title style="color: rgba(0, 0, 0, .87)">Brunch this weekend?</mu-list-item-sub-title>
+                  <mu-list-item-sub-title>I'll be in your neighborhood doing errands this weekend. Do you want to hang out?</mu-list-item-sub-title>
+                </mu-list-item-content>
+                <mu-list-item-action>
+                  <mu-checkbox
+                    color="yellow700"
+                    v-model="selects"
+                    value="value1"
+                    uncheck-icon="star_border"
+                    checked-icon="star"
+                  ></mu-checkbox>
+                </mu-list-item-action>
               </mu-list-item>
-              <mu-divider :key=i />
+              <mu-divider :key="i"/>
             </template>
           </mu-list>
         </mu-load-more>
@@ -47,9 +49,10 @@
     </section>
     <mu-container class="index-footer">
       <mu-bottom-nav>
-        <mu-bottom-nav-item title="首页" icon="home"></mu-bottom-nav-item>
-        <mu-bottom-nav-item title="添加笔记" icon="note_add"></mu-bottom-nav-item>
-        <mu-bottom-nav-item title="个人中心" icon="person"></mu-bottom-nav-item>
+        <span ></span>
+        <mu-bottom-nav-item to='/' title="首页" icon="home"></mu-bottom-nav-item>
+        <mu-bottom-nav-item to='/note' title="添加笔记" icon="note_add"></mu-bottom-nav-item>
+        <mu-bottom-nav-item to='/person'  title="个人中心" icon="person"></mu-bottom-nav-item>
       </mu-bottom-nav>
     </mu-container>
   </div>
@@ -97,28 +100,32 @@ export default {
       carouselImg2,
       fruits,
       searchValue: "",
-      num: 10,
+      num: 20,
       refreshing: false,
       loading: false,
-      text: 'List',
+      text: "List"
     };
   },
   methods: {
-    refresh () {
+    refresh() {
       this.refreshing = true;
       this.$refs.container.scrollTop = 0;
       setTimeout(() => {
         this.refreshing = false;
-        this.text = this.text === 'List' ? 'Menu' : 'List';
+        this.text = this.text === "List" ? "Menu" : "List";
         this.num = 10;
-      }, 2000)
+      }, 2000);
     },
-    load () {
+    load() {
       this.loading = true;
       setTimeout(() => {
         this.loading = false;
         this.num += 10;
-      }, 2000)
+      }, 2000);
+    },
+    routerTo(path) {
+        console('tototo');
+        this.$router.push(`/${path}`);
     }
   }
 };
@@ -133,14 +140,38 @@ export default {
 }
 
 .index-header {
-    position:fixed;
-    top:0px;
-    width 100%;
-    z-index 100;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
 }
 
-.index-carousel-box {
-  height: 150px;
+.index-options-box{
+    position:relative;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    top:56px;
+    width: 100%;
+    height 100px;
+    border-bottom: 1px solid #ccc;
+    .option-item{
+        display: block;
+        width: 40px;
+        height 40px;
+        border: 1px solid #fff;
+        border-radius: 100%;
+        font-size:14px;
+        background-color:#2196f3;
+        line-height 40px;
+        color: #fff;
+    }
+}
+
+
+.index-list-box {
+  position: relative;
+  top: 56px;
 }
 
 .index-footer {
