@@ -2,64 +2,64 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
     
-import _15524400136269d49a922ebc8a6d77ca82c0a74289b98 from '@/pages/Appshell.vue';
+import _15539351461309d49a922ebc8a6d77ca82c0a74289b98 from '@/pages/Appshell.vue';
     
 
     
-import _1552440013626d2462dcf0c7beccd286c658e08187914 from '@/pages/Error.vue';
+import _1553935146130d2462dcf0c7beccd286c658e08187914 from '@/pages/Error.vue';
     
 
     
-import _155244001362667830448037326425509e44bce7632b7 from '@/pages/Index.vue';
+import _155393514613067830448037326425509e44bce7632b7 from '@/pages/Index.vue';
     
 
     
-import _15524400136268df541b53e4cb5088c52e8d2c73e2b09 from '@/pages/login.vue';
+import _15539351461308df541b53e4cb5088c52e8d2c73e2b09 from '@/pages/login.vue';
     
 
     
-import _1552440013626ebaee5f8e441f1806c0dcf5774be3a94 from '@/pages/person.vue';
+import _1553935146130ebaee5f8e441f1806c0dcf5774be3a94 from '@/pages/person.vue';
     
 
     
-import _155244001362691052b4e544af010cd122b5b3b2747de from '@/pages/register.vue';
+import _155393514613091052b4e544af010cd122b5b3b2747de from '@/pages/register.vue';
     
 
 
 let routes = [
     {
         "path": "/appshell",
-        "component": _15524400136269d49a922ebc8a6d77ca82c0a74289b98,
+        "component": _15539351461309d49a922ebc8a6d77ca82c0a74289b98,
         "meta": {},
         "name": "appshell"
     },
     {
         "path": "/",
-        "component": _155244001362667830448037326425509e44bce7632b7,
+        "component": _155393514613067830448037326425509e44bce7632b7,
         "meta": {},
         "name": "index"
     },
     {
         "path": "/login",
-        "component": _15524400136268df541b53e4cb5088c52e8d2c73e2b09,
+        "component": _15539351461308df541b53e4cb5088c52e8d2c73e2b09,
         "meta": {},
         "name": "login"
     },
     {
         "path": "/person",
-        "component": _1552440013626ebaee5f8e441f1806c0dcf5774be3a94,
+        "component": _1553935146130ebaee5f8e441f1806c0dcf5774be3a94,
         "meta": {},
         "name": "person"
     },
     {
         "path": "/register",
-        "component": _155244001362691052b4e544af010cd122b5b3b2747de,
+        "component": _155393514613091052b4e544af010cd122b5b3b2747de,
         "meta": {},
         "name": "register"
     },
     {
         "path": "/error",
-        "component": _1552440013626d2462dcf0c7beccd286c658e08187914,
+        "component": _1553935146130d2462dcf0c7beccd286c658e08187914,
         "meta": {},
         "name": "error",
         "alias": "*"
